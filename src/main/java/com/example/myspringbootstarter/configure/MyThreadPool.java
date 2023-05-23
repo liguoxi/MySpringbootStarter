@@ -18,6 +18,7 @@ public class MyThreadPool {
     MyThreadConfig myThreadConfig;
     @Bean
     public ThreadPoolExecutor MyThreadPoolExecutor() {
+
         return new ThreadPoolExecutor(myThreadConfig.getCoreThread(), myThreadConfig.getMaxThread(), 100, TimeUnit.SECONDS, new ArrayBlockingQueue<>(1000));
     }
 }
